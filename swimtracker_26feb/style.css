@@ -1,0 +1,240 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("assets/swimming_pool.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+}
+.centered-image {
+  display: block;
+  max-width: 81vw;
+  max-height: 81vh;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; 
+}
+
+/* 03summary text */
+.summary-category {
+  position: relative;
+  margin: 0.5rem auto;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1; 
+}
+.summary-header {
+  background-color: rgba(32, 38, 64, 0.7);
+  width: 420px;
+  max-width: 90vw;
+  padding: 1.5rem 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  margin-top: 2rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: white;
+}
+.summary-box {
+  background-color: rgba(32, 38, 64, 0.7);
+  width: 420px;
+  max-width: 90vw;
+  padding: 1.5rem 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  margin-top: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: white;
+}
+.summary-container {
+  position: absolute;
+  margin: 2rem auto;
+  margin-bottom: 1rem;
+  top: 24rem;
+  left: 50.5%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+/* 03summary text */
+
+@media screen and (max-width: 414px) {
+  .summary-box, .summary-header {
+    padding: 1rem 1.2rem;
+    width: 90vw;
+    font-size: 1rem;
+  }
+  .summary-container {
+    top: 70%;
+  }
+}
+
+/* Controls: file input & date selector */
+.controls {
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.controls input[type="file"],
+.controls select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(32, 38, 64, 0.7);
+  color: white;
+  width: 260px;
+  max-width: 80vw;
+}
+/* Chart overlay for 04_trend.png, aligned similarly to 03_summary.html */
+.chart-overlay {
+  position: absolute;
+  top: 24rem;
+  left: 49.9%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  z-index: 1;
+}
+.chart-overlay h2 {
+  color: white;
+}
+
+.chart-date {
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.chart-overlay canvas {
+  background-color: rgba(32, 38, 64, 0.7);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 80vw;
+  max-height: 260px;
+  color: white;
+}
+
+header {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+header select {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(32, 38, 64, 0.7);
+  color: white;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+/* Style for chart labels above each chart */
+.chart-label {
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.click-circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  animation: pop 0.6s ease-out;
+  z-index: 999;
+}
+
+@keyframes pop {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* 34567 buttons */
+.nav-button {
+  position: absolute;
+  bottom: 15vh;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 90px;
+  z-index: 10;
+  cursor: pointer;
+}
+/* Match visual positions from your image */
+.nav-summary   { left: 42.5%; }
+.nav-trend     { left: 46.5%; }
+.nav-leader    { left: 53.5%; }
+.nav-settings  { left: 58.5%; }
+
+
+
+/* start 2 pair without 2buttons */
+.nav-button {
+  position: absolute;
+  width: 180px;
+  height: 60px;
+  z-index: 10;
+  background-color: transparent; 
+}
+/* Pair Device */
+.nav-pair {
+  top: 48%;  
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* Continue Without Pairing */
+.nav-without {
+  top: 54%;
+  left: 50%;
+  transform: translateX(-50%);
+}

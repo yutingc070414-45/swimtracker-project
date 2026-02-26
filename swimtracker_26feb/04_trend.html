@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Swim Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="assets/04_trend.png" class="centered-image">
+
+<div class="controls">
+  <input type="file" id="csvFileInput" accept=".csv">
+
+  <select id="month-select">
+    <option value="2023-01" selected>January 2023</option>
+    <option value="2023-02">February 2023</option>
+  </select>
+</div>
+
+  <main>
+    <div class="chart-overlay">
+      <section>
+        <p class="chart-label">Heart Rate Over Time</p>
+        <canvas id="chart-heart"></canvas>
+        <p class="chart-date">January 2023</p>
+      </section>
+
+      <section>
+        <p class="chart-label">Distance Per Day</p>
+        <canvas id="chart-distance"></canvas>
+        <p class="chart-date">January 2023</p>
+      </section>
+
+      <section>
+        <p class="chart-label">Swim Style Breakdown</p>
+        <canvas id="chart-style"></canvas>
+        <p class="chart-date">January 2023</p>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script_trend.js"></script>
+</body>
+
+<!-- Bottom Navigation -->
+<a href="03_summary.html" class="nav-button nav-summary"></a>
+<a href="04_trend.html" class="nav-button nav-trend"></a>
+<a href="05_leaderboard.html" class="nav-button nav-leader"></a>
+<a href="06_settings.html" class="nav-button nav-settings"></a>
+
+</html>
